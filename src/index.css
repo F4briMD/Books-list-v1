@@ -6,7 +6,24 @@
 @tailwind utilities;
 
 body{
+background: rgb(25, 23, 36);
+}
+.bookmark-container {
+  position: relative;
+}
 
+.bookmark-container::after {
+  content: url('../assets/icons/BookMark.svg');
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bookmark-container:hover::after {
+  opacity: 1;
 }
 
 @layer components{

@@ -57,37 +57,3 @@ const BookModal = ({ setBookModal, selectedBookId }) => {
 
 export default BookModal;
 
-// import BooksList from '../books.json';
-
-// const BookModal = ({ setBookModal,SelectedBookId }) => {
-
-//     const cerrarBookModal = () => {
-//         setBookModal(false);
-//     }
-
-//    // Cambia esto según corresponda
-
-//     // Buscar el libro seleccionado por su ID
-//     const selectedBook = BooksList.library.find(item => item.book.id === selectedBookId);
-
-//     if (!selectedBook) {
-//         return null; // Manejar el caso en que el libro no se encuentre
-//     }
-
-//     return (
-//         <section className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-20 backdrop-blur-sm'>
-//             <main className='flex flex-row items-center justify-center '>
-//                 <div key={selectedBook.book.id} className='bg-white w-96'>
-//                     <img src={selectedBook.book.cover} alt={`Portada de ${selectedBook.book.title}`} />
-//                 </div>
-//                 <div className=''>
-//                     <button
-//                         onClick={cerrarBookModal}
-//                     >x</button>
-//                 </div>
-//             </main>
-//         </section>
-//     );
-// }
-
-// export default BookModal;
