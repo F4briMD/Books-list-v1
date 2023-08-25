@@ -1,14 +1,15 @@
 import BooksList from '../books.json'
 import BaselineDensity from '../assets/icons/Baseline_density.svg'
+import { useState } from 'react'
 // import { useState } from 'react'
 
-const Books = ({setBookModal}) => {
+const Books = ({setBookModal,openBookModal}) => {
 
-
+ 
 
   return (
     <section className="container ">
-      <main className="grid grid-cols-4 gap-8 py-8">
+      <main className="grid grid-cols-4 gap-8 py-8 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:p-5">
         
           {BooksList.library.map((item,index)=>(
             
@@ -31,8 +32,10 @@ const Books = ({setBookModal}) => {
                 </span>
                 <img src={BaselineDensity} 
                 alt="" 
+                className='cursor-pointer'
                 onClick={()=>{
-                  setBookModal(true)
+                  openBookModal(item.book.id)
+                  
                 }}
                 />
                 </div>
