@@ -26,7 +26,7 @@ const Books = ({openBookModal}) => {
       handlePageRangeChange={handlePageRangeChange}
       // setSelectedPageRange={setSelectedPageRange}
       />
-      <main className="grid grid-cols-4 gap-8 py-1 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:p-5">
+      <main className="grid items-center grid-cols-4 gap-8 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:p-5 ">
         {BooksList.library.map((item, index) => {
           if (
             (generoSelect === '' ||
@@ -39,9 +39,9 @@ const Books = ({openBookModal}) => {
             return (
               <article
                 key={index}
-                className="relative flex flex-col w-auto p-2 transition duration-200 bg-gray-200 rounded-md hover:bg-gray-300"
+                className="flex flex-col w-full h-full p-2 transition duration-200 bg-gray-200 rounded-md hover:bg-gray-300"
               >
-                <div className="relative w-full h-[400px] group">
+                <div className="relative  h-[400px] group">
                   <img
                     src={BookMark}
                     alt=""

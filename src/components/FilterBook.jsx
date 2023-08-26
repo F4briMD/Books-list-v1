@@ -2,10 +2,12 @@ import Filter_adjust from '../assets/icons/Filter_adjustments.svg'
 import Booksvg from '../assets/icons/Book.svg'
 // import BookList from '../books.json'
 import { useState } from 'react'
+import BookMarkFav from './BookMarkFav';
 
 const FilterBook = ({handleGenreChange,handlePageRangeChange }) => {
 
     const [selectedPageRange, setSelectedPageRange] = useState('');
+    const [bookMenu,setBookMenu]=useState(false)
 
     const handlePageRangeSelection = (event) => {
         const selectedRange = parseInt(event.target.value);
@@ -13,11 +15,14 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange }) => {
         handlePageRangeChange(selectedRange);
       };
     
+    const toggleMenu=()=>{
+        setBookMenu(!bookMenu)
+    }
 
 
   return (
     <section className="">
-        <main className="flex items-center justify-between p-3 mt-2 rounded-md bg-slate-200">
+        <main className="flex items-center justify-between p-3 my-3 rounded-md bg-slate-200">
         <div className="flex flex-row items-center ">
             
             <div className='flex flex-row items-center pr-2 '>
@@ -32,7 +37,7 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange }) => {
                 handleGenreChange(e.target.value)
             }
             >
-                <option value="" disabled selected>Generos</option>
+                <option value="" disabled >Generos</option>
                 <option value="" >Todos</option>
                 <option value="Fantasía">Fantasia</option>
                 <option value="Terror">Terror</option>
@@ -54,10 +59,15 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange }) => {
             
             <img src={Booksvg} alt="" 
             className='p-1 transition-all duration-200 bg-green-500 rounded-full cursor-pointer hover:bg-green-700'
+            onClick={toggleMenu}
             />
             
         </div>
         </main>
+        <BookMarkFav 
+        bookMenuOpen={bookMenu}
+        onClose={toggleMenu}
+        />
     </section>
   )
 }
