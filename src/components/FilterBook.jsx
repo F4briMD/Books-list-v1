@@ -32,7 +32,7 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorit
               
             </div>           
             <select name="" id=""
-            className="p-2 mr-5 rounded-full cursor-pointer"
+            className="p-2 mr-5 border rounded-full cursor-pointer border-slate-600"
             onClick={(e)=>
                 handleGenreChange(e.target.value)
             }

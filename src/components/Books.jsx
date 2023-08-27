@@ -1,6 +1,7 @@
 import BooksList from '../books.json'
 import BaselineDensity from '../assets/icons/Baseline_density.svg'
 import BookMark from '../assets/icons/BookMark.svg'
+import BookMarkMinus from '../assets/icons/BookMarkMinus.svg'
 import { useState } from 'react'
 import FilterBook from './FilterBook'
 
@@ -33,6 +34,7 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
       />
       <main className="grid items-center grid-cols-4 gap-8 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:p-5 ">
         {BooksList.library.map((item, index) => {
+          const isBookInFavorites = favoritos.some((book) => book.id === item.book.id);
           if (
             (generoSelect === '' ||
             generoSelect === 'Todos' ||
@@ -48,11 +50,12 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
               >
                 <div className="relative  h-[400px] group">
                   <img
-                    src={BookMark}
-                    alt=""
-                    className="absolute top-0 right-0 p-2 m-4 transition-all duration-300 bg-green-500 rounded-full opacity-0 cursor-pointer hover:bg-green-700 group-hover:opacity-100"
+                    src={isBookInFavorites ? BookMarkMinus :BookMark }
+                    alt="icons"
+                    className={`absolute top-0 right-0 p-2 m-4  transition-all duration-300 ${isBookInFavorites ? 'bg-red-500' :'bg-green-500'} bg-green-500 rounded-full opacity-0 cursor-pointer ${isBookInFavorites ? 'hover:bg-red-700' :'hover:bg-green-700'} group-hover:opacity-100`}
                     onClick={()=>{
-                       handleAddToFavorites(item.book)
+                      isBookInFavorites ? handleRemoveFavorites(item.book.id)
+                      : handleAddToFavorites(item.book)
                     }}
                   />
                   <img
@@ -61,10 +64,11 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
                     className="object-cover w-full h-full rounded-md"
                   />
                 </div>
-
                 <h2 className="pt-2 text-lg font-semibold text-center">
                   {item.book.title}
                 </h2>
+                <div className='px-2 pb-1 mt-auto'>
+                
                 {/* <p>{item.book.synopsis}</p> */}
                 <p className="pb-2 mt-auto font-medium text-gray-500">
                   {item.book.author.name}
@@ -85,6 +89,7 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
                       openBookModal(item.book.id);
                     }}
                   />
+                </div>
                 </div>
               </article>
             );

@@ -2,7 +2,7 @@
 
 const Header = () => {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white shadow-lg ">
       <header className="container p-5 py-10 mx-auto">
       <div className="flex items-center justify-between">
         <span className="text-xl text-black">F/M</span>
