@@ -2,17 +2,17 @@
 
 const Header = () => {
   return (
-    <section className="w-full bg-slate-300">
+    <section className="w-full bg-white">
       <header className="container p-5 py-10 mx-auto">
       <div className="flex items-center justify-between">
         <span className="text-xl text-black">F/M</span>
-        <div>
+        {/* <div>
           <input
           className="w-[300px] h-[40px] p-5 rounded-md"  
           type="search" 
           name="" 
           id="" />
-        </div>
+        </div> */}
         <span>Inicio</span>
       </div>
       </header>

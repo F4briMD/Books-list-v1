@@ -4,7 +4,7 @@ import Booksvg from '../assets/icons/Book.svg'
 import { useState } from 'react'
 import BookMarkFav from './BookMarkFav';
 
-const FilterBook = ({handleGenreChange,handlePageRangeChange }) => {
+const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorites,favoritos }) => {
 
     const [selectedPageRange, setSelectedPageRange] = useState('');
     const [bookMenu,setBookMenu]=useState(false)
@@ -22,7 +22,7 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange }) => {
 
   return (
     <section className="">
-        <main className="flex items-center justify-between p-3 my-3 rounded-md bg-slate-200">
+        <main className="flex items-center justify-between p-3 my-3 bg-white rounded-md">
         <div className="flex flex-row items-center ">
             
             <div className='flex flex-row items-center pr-2 '>
@@ -67,6 +67,8 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange }) => {
         <BookMarkFav 
         bookMenuOpen={bookMenu}
         onClose={toggleMenu}
+        handleRemoveFavorites={handleRemoveFavorites}
+        favoritos={favoritos}
         />
     </section>
   )

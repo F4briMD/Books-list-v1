@@ -5,11 +5,12 @@ import { useState } from 'react'
 import FilterBook from './FilterBook'
 
 
-const Books = ({openBookModal}) => {
+const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favoritos}) => {
 
   const [generoSelect,setGeneroSelect]= useState('')
   const [selectedPageRange, setSelectedPageRange] = useState(0);
-  
+
+
   const handleGenreChange = (generoSelect)=>{
       
       setGeneroSelect(generoSelect)
@@ -18,12 +19,16 @@ const Books = ({openBookModal}) => {
     setSelectedPageRange(selectedRange);
   }
 
+ 
+
   return (
     // 
     <section className="container">
       <FilterBook 
       handleGenreChange={handleGenreChange} 
       handlePageRangeChange={handlePageRangeChange}
+      handleRemoveFavorites={handleRemoveFavorites}
+      favoritos={favoritos}
       // setSelectedPageRange={setSelectedPageRange}
       />
       <main className="grid items-center grid-cols-4 gap-8 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:p-5 ">
@@ -46,6 +51,9 @@ const Books = ({openBookModal}) => {
                     src={BookMark}
                     alt=""
                     className="absolute top-0 right-0 p-2 m-4 transition-all duration-300 bg-green-500 rounded-full opacity-0 cursor-pointer hover:bg-green-700 group-hover:opacity-100"
+                    onClick={()=>{
+                       handleAddToFavorites(item.book)
+                    }}
                   />
                   <img
                     src={item.book.cover}
