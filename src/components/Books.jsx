@@ -44,7 +44,7 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
 
           ) {
             return (
-              <article
+              <article 
                 key={index}
                 className="flex flex-col w-full h-full p-2 transition duration-200 bg-gray-200 rounded-md hover:bg-gray-300"
               >
