@@ -31,7 +31,7 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorit
                /> 
               
             </div>           
-            <select name="" id=""
+            <select name="" id="categorias"
             className="p-2 mr-5 border rounded-full cursor-pointer border-slate-600"
             onClick={(e)=>
                 handleGenreChange(e.target.value)
@@ -49,6 +49,7 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorit
                    max='1500'
                    value={selectedPageRange}
                    onChange={handlePageRangeSelection }
+                   className='max-sm:hidden'
             /> 
         </div>
         <div className='flex flex-row items-center'>
@@ -71,6 +72,8 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorit
         favoritos={favoritos}
         />
     </section>
+
+
   )
 }
 

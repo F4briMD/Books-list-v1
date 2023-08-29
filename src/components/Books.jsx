@@ -32,7 +32,7 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
       favoritos={favoritos}
       // setSelectedPageRange={setSelectedPageRange}
       />
-      <main className="grid items-center grid-cols-4 gap-8 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:p-5 ">
+      <main className="grid items-center grid-cols-4 gap-8 my-10 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:p-5 ">
         {BooksList.library.map((item, index) => {
           const isBookInFavorites = favoritos.some((book) => book.id === item.book.id);
           

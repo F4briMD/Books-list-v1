@@ -2,6 +2,7 @@ import { useState,useEffect } from "react"
 import Books from "./components/Books"
 import Header from "./components/Header"
 import BookModal from "./components/BookModal"
+import Footer from "./components/Footer"
 
 
 
@@ -52,6 +53,7 @@ function App() {
         />
         }
       </section>
+      <Footer/>
     </main>
   )
 }
