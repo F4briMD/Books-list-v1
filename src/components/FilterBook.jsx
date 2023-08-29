@@ -22,7 +22,7 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorit
 
   return (
     <section className="">
-        <main className="flex items-center justify-between p-3 my-3 bg-white rounded-md">
+        <main className="flex items-center justify-between p-3 my-3 bg-white rounded-md shadow-lg">
         <div className="flex flex-row items-center ">
             
             <div className='flex flex-row items-center pr-2 '>
@@ -58,7 +58,7 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorit
             </div>
             
             <img src={Booksvg} alt="" 
-            className='p-1 transition-all duration-200 bg-green-500 rounded-full cursor-pointer hover:bg-green-700'
+            className='p-1 transition-all duration-200 rounded-full cursor-pointer bg-sky-400 hover:bg-blue-500'
             onClick={toggleMenu}
             />
             

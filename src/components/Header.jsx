@@ -3,7 +3,7 @@
 const Header = () => {
   return (
     <section className="w-full bg-white shadow-lg ">
-      <header className="container p-5 py-10 mx-auto">
+      <header className="container p-5 py-6 mx-auto">
       <div className="flex items-center justify-between">
         <span className="text-xl text-black">F/M</span>
         {/* <div>
@@ -13,6 +13,7 @@ const Header = () => {
           name="" 
           id="" />
         </div> */}
+        <h1 className="text-2xl font-medium underline underline-offset-4 ">Book List </h1>
         <span>Inicio</span>
       </div>
       </header>

@@ -28,7 +28,7 @@ const BookModal = ({ setBookModal, selectedBookId }) => {
               className="object-cover w-full h-full rounded-md"
             />
           </div>
-
+            
           {/* Columna derecha */}
           <div className="p-4 w-5/5 sm:w-4/5">
             <p className="mt-4 text-xl font-semibold">{Bookid.book.title}</p>

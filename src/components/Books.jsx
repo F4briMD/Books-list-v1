@@ -35,6 +35,15 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
       <main className="grid items-center grid-cols-4 gap-8 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:p-5 ">
         {BooksList.library.map((item, index) => {
           const isBookInFavorites = favoritos.some((book) => book.id === item.book.id);
+          
+          const genreClass = `w-auto font-medium text-white badge ${
+            item.book.genre === 'Fantasía' ? 'bg-pink-700' :
+            item.book.genre === 'Ciencia ficción' ? 'bg-blue-700' :
+            item.book.genre === 'Terror' ? 'bg-red-700' :
+            item.book.genre === 'Zombies' ? 'bg-green-700' :
+            ''
+          }`;
+          
           if (
             (generoSelect === '' ||
             generoSelect === 'Todos' ||
@@ -46,13 +55,13 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
             return (
               <article 
                 key={index}
-                className="flex flex-col w-full h-full p-2 transition duration-200 bg-gray-200 rounded-md hover:bg-gray-300"
+                className="flex flex-col w-full h-full p-2 transition duration-200 bg-white rounded-md shadow-lg hover:bg-gray-300"
               >
                 <div className="relative  h-[400px] group">
                   <img
                     src={isBookInFavorites ? BookMarkMinus :BookMark }
                     alt="icons"
-                    className={`absolute top-0 right-0 p-2 m-4  transition-all duration-300 ${isBookInFavorites ? 'bg-red-500' :'bg-green-500'} bg-green-500 rounded-full opacity-0 cursor-pointer ${isBookInFavorites ? 'hover:bg-red-700' :'hover:bg-green-700'} group-hover:opacity-100`}
+                    className={`absolute top-0 right-0 p-2 m-4  transition-all duration-300 ${isBookInFavorites ? 'bg-red-500' :'bg-sky-500'} bg-green-500 rounded-full opacity-0 cursor-pointer ${isBookInFavorites ? 'hover:bg-red-700' :'hover:bg-sky-700'} group-hover:opacity-100`}
                     onClick={()=>{
                       isBookInFavorites ? handleRemoveFavorites(item.book.id)
                       : handleAddToFavorites(item.book)
@@ -78,7 +87,7 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
                   id="vermas"
                   className="flex justify-between gap-3 mt-auto"
                 >
-                  <span className="w-auto text-white bg-gray-600 badge">
+                  <span className={genreClass}>
                     {item.book.genre}
                   </span>
                   <img
