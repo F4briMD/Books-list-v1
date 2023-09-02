@@ -35,7 +35,7 @@ function App() {
 
   
   return (
-    <main className="flex flex-col items-center h-screen font-Poppins ">
+    <main className="flex flex-col items-center h-full bg-[#ebecee] dark:bg-[#0e0e0c] font-Poppins ">
       <Header/>
       <section className="container mx-auto">
         <Books

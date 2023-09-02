@@ -1,3 +1,4 @@
+import ToggleDarkMode from "./ToggleDarkMode"
 
 
 const Header = () => {
@@ -14,7 +15,7 @@ const Header = () => {
           id="" />
         </div> */}
         <h1 className="text-2xl font-medium underline underline-offset-4 ">Book List </h1>
-        <span>Inicio</span>
+        <ToggleDarkMode/>
       </div>
       </header>
     </section>

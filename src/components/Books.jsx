@@ -55,7 +55,7 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
             return (
               <article 
                 key={index}
-                className="flex flex-col w-full h-full p-2 transition duration-200 bg-white rounded-md shadow-lg hover:bg-gray-300"
+                className="flex flex-col w-full h-full p-2 transition duration-200 bg-white dark:bg-[#1b1d19] rounded-md shadow-lg hover:bg-gray-300 dark:hover:bg-[#292b25]"
               >
                 <div className="relative  h-[400px] group">
                   <img
@@ -73,13 +73,13 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
                     className="object-cover w-full h-full rounded-md"
                   />
                 </div>
-                <h2 className="pt-2 text-lg font-semibold text-center">
+                <h2 className="pt-2 text-lg font-semibold text-center dark:text-[#ece9e9]">
                   {item.book.title}
                 </h2>
-                <div className='px-2 pb-1 mt-auto'>
+                <div className='px-2 pb-1 mt-auto '>
                 
                 {/* <p>{item.book.synopsis}</p> */}
-                <p className="pb-2 mt-auto font-medium text-gray-500">
+                <p className="pb-2 mt-auto font-medium text-gray-500 dark:text-[#b8b8b8]">
                   {item.book.author.name}
                 </p>
 
@@ -93,7 +93,7 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
                   <img
                     src={BaselineDensity}
                     alt=""
-                    className="cursor-pointer"
+                    className="cursor-pointer dark:decoration-white"
                     onClick={() => {
                       openBookModal(item.book.id);
                     }}
