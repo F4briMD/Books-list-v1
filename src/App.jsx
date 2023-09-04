@@ -38,7 +38,7 @@ function App() {
 
   const toggleDark= () =>{
     setIsDarkMode((prevIsDarkMode)=> !prevIsDarkMode)
-    console.log(isDarkMode)
+   
   }
 
     // DarkMode
