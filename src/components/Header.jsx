@@ -1,7 +1,7 @@
 import ToggleDarkMode from "./ToggleDarkMode"
 
 
-const Header = () => {
+const Header = ({toggleDark,isDarkMode}) => {
   return (
     <section className="w-full bg-white shadow-lg ">
       <header className="container p-5 py-6 mx-auto">
@@ -15,7 +15,10 @@ const Header = () => {
           id="" />
         </div> */}
         <h1 className="text-2xl font-medium underline underline-offset-4 ">Book List </h1>
-        <ToggleDarkMode/>
+        <ToggleDarkMode
+        toggleDark={toggleDark}
+        isDarkMode={isDarkMode}
+        />
       </div>
       </header>
     </section>

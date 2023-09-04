@@ -4,7 +4,7 @@ import Booksvg from '../assets/icons/Book.svg'
 import { useState } from 'react'
 import BookMarkFav from './BookMarkFav';
 
-const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorites,favoritos }) => {
+const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorites,favoritos,isDarkMode}) => {
 
     const [selectedPageRange, setSelectedPageRange] = useState('');
     const [bookMenu,setBookMenu]=useState(false)
@@ -70,6 +70,7 @@ const FilterBook = ({handleGenreChange,handlePageRangeChange,handleRemoveFavorit
         onClose={toggleMenu}
         handleRemoveFavorites={handleRemoveFavorites}
         favoritos={favoritos}
+        isDarkMode={isDarkMode}
         />
     </section>
 

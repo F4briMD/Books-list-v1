@@ -1,11 +1,11 @@
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 
-const ToggleDarkMode = () => {
+const ToggleDarkMode = ({toggleDark,isDarkMode}) => {
   return (
     <div>
-       <Flowbite>
+       <Flowbite dark={isDarkMode}>
       
-      <DarkThemeToggle />
+      <DarkThemeToggle onClick={toggleDark} />
       
     </Flowbite>
     </div>

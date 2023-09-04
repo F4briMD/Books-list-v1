@@ -6,7 +6,7 @@ import { useState } from 'react'
 import FilterBook from './FilterBook'
 
 
-const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favoritos}) => {
+const Books = ({openBookModal,isDarkMode,handleAddToFavorites,handleRemoveFavorites,favoritos}) => {
 
   const [generoSelect,setGeneroSelect]= useState('')
   const [selectedPageRange, setSelectedPageRange] = useState(0);
@@ -30,6 +30,7 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
       handlePageRangeChange={handlePageRangeChange}
       handleRemoveFavorites={handleRemoveFavorites}
       favoritos={favoritos}
+      isDarkMode={isDarkMode}
       // setSelectedPageRange={setSelectedPageRange}
       />
       <main className="grid items-center grid-cols-4 gap-8 my-10 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:p-5 ">
@@ -55,7 +56,7 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
             return (
               <article 
                 key={index}
-                className="flex flex-col w-full h-full p-2 transition duration-200 bg-white dark:bg-[#1b1d19] rounded-md shadow-lg hover:bg-gray-300 dark:hover:bg-[#292b25]"
+                className={`flex flex-col w-full h-full p-2 transition duration-200 ${isDarkMode ? 'dark:bg-[#1b1d19]' : 'bg-white '}  rounded-md shadow-lg ${isDarkMode ? 'dark:hover:bg-[#292b25]' : 'hover:bg-gray-300 '} `}
               >
                 <div className="relative  h-[400px] group">
                   <img
@@ -73,13 +74,13 @@ const Books = ({openBookModal,handleAddToFavorites,handleRemoveFavorites,favorit
                     className="object-cover w-full h-full rounded-md"
                   />
                 </div>
-                <h2 className="pt-2 text-lg font-semibold text-center dark:text-[#ece9e9]">
+                <h2 className={`pt-2 text-lg font-semibold text-center ${isDarkMode ? 'dark:text-[#ece9e9]' : 'text-[#131212] '} `}>
                   {item.book.title}
                 </h2>
                 <div className='px-2 pb-1 mt-auto '>
                 
                 {/* <p>{item.book.synopsis}</p> */}
-                <p className="pb-2 mt-auto font-medium text-gray-500 dark:text-[#b8b8b8]">
+                <p className={`pb-2 mt-auto font-medium  ${isDarkMode ? 'dark:text-[#b8b8b8]' : 'text-gray-500'} `}>
                   {item.book.author.name}
                 </p>
 
