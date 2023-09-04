@@ -56,7 +56,7 @@ const Books = ({openBookModal,isDarkMode,handleAddToFavorites,handleRemoveFavori
             return (
               <article 
                 key={index}
-                className={`flex flex-col w-full h-full p-2 transition duration-200 ${isDarkMode ? 'dark:bg-[#1b1d19]' : 'bg-white '}  rounded-md shadow-lg ${isDarkMode ? 'dark:hover:bg-[#292b25]' : 'hover:bg-gray-300 '} `}
+                className={`flex flex-col w-full max-sm:w-80 max-xs:w-64  m-auto  h-full p-2 transition duration-200 ${isDarkMode ? 'dark:bg-[#1b1d19]' : 'bg-white '}  rounded-md shadow-lg ${isDarkMode ? 'dark:hover:bg-[#292b25]' : 'hover:bg-gray-300 '} `}
               >
                 <div className="relative  h-[400px] group">
                   <img
